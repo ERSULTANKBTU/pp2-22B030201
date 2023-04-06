@@ -29,8 +29,8 @@ font = pygame.font.SysFont("Verdana", 60)
 font_small = pygame.font.SysFont("Verdana", 20)
 game_over = font.render("Game Over", True, BLACK)
 
-background = pygame.image.load("pp2-22B030201/TSIS8/1/AnimatedStreet.png")
-coin = pygame.image.load("pp2-22B030201/TSIS8/1/coin.png")
+background = pygame.image.load("pp2-22B030201/TSIS8/First/AnimatedStreet.png")
+coin = pygame.image.load("pp2-22B030201/TSIS8/First/coin.png")
 coin_image = pygame.transform.scale(coin, (60, 60))
 # Create a white screen
 DISPLAYSURF = pygame.display.set_mode((400, 600))
@@ -48,7 +48,7 @@ class coind(pygame.sprite.Sprite):
         self.rect.move_ip(0, SPEED)
 
         if (pygame.sprite.spritecollideany(P1, coins)):
-            pygame.mixer.Sound("pp2-22B030201/TSIS8/1/coin-sound.wav").play()
+            pygame.mixer.Sound("pp2-22B030201/TSIS8/First/coin-sound.wav").play()
             Number_of_coins += 1
             self.rect.top = 0
             self.rect.center = (random.randint(40, SCREEN_WIDTH - 40), 0)
@@ -60,7 +60,7 @@ class coind(pygame.sprite.Sprite):
 class Enemy(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
-        self.image = pygame.image.load("pp2-22B030201/TSIS8/1/Enemy.png")
+        self.image = pygame.image.load("pp2-22B030201/TSIS8/First/Enemy.png")
         self.rect = self.image.get_rect()
         self.rect.center = (random.randint(40, SCREEN_WIDTH - 40), 0)
 
@@ -76,7 +76,7 @@ class Enemy(pygame.sprite.Sprite):
 class Player(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
-        self.image = pygame.image.load("pp2-22B030201/TSIS8/1/Player.png")
+        self.image = pygame.image.load("pp2-22B030201/TSIS8/First/Player.png")
         self.rect = self.image.get_rect()
         self.rect.center = (160, 520)
 
@@ -137,7 +137,7 @@ while True:
 
     # To be run if collision occurs between Player and Enemy
     if pygame.sprite.spritecollideany(P1, enemies):
-        pygame.mixer.Sound('pp2-22B030201/TSIS8/1/crash.wav').play()
+        pygame.mixer.Sound('pp2-22B030201/TSIS8/First/crash.wav').play()
         time.sleep(0.5)
 
         DISPLAYSURF.fill(RED)
