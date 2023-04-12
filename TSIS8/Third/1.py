@@ -23,7 +23,7 @@ def draw_menu(size, color):
     pygame.draw.circle(win, 'white', (155, 35), 10)
     s_brush = pygame.draw.rect(win, 'black', [190, 10, 50, 50])
     pygame.draw.circle(win, 'white', (215, 35), 5)
-    brush_list = [xl_brush, l_brush, m_brush, s_brush, e_brush]
+    brush_list = [xl_brush, l_brush, m_brush, s_brush]
 
     if size == 20:
         pygame.draw.rect(win, 'green', [10, 10, 50, 50], 3)
